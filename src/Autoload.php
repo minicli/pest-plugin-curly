@@ -2,17 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Pest\PluginName;
+namespace Minicli\PestCurlyPlugin;
 
+use Minicli\Curly\Client;
 use Pest\Plugin;
-use PHPUnit\Framework\TestCase;
 
-Plugin::uses(Example::class);
+Plugin::uses(Curly::class);
 
-/**
- * @return TestCase
- */
-function example(string $argument)
+function curly(): Client
 {
-    return test()->example(...func_get_args());
+    return new Client();
 }
