@@ -1,6 +1,6 @@
 {
-    "name": "pestphp/pest-plugin-curly",
-    "description": "Make curl(y) requests in tests with Pest PHP",
+    "name": "minicli/pest-plugin-curly",
+    "description": "Make curl(y) requests in Pest tests",
     "keywords": [
         "php",
         "framework",
@@ -16,7 +16,7 @@
     ],
     "license": "MIT",
     "require": {
-        "php": "^7.3 || ^8.0",
+        "php": "^7.4 || ^8.0",
         "minicli/curly": "^0.2.0",
         "pestphp/pest": "^1.0",
         "pestphp/pest-plugin": "^1.0"
