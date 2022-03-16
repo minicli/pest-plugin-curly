@@ -34,7 +34,8 @@ it('matches strings in response body', function () {
 });
 ```
 
-It also comes with a shortcut function that you can use to have access to a Curly Client instance.
+It also comes with a shortcut function that you can use to have access to a Curly Client instance. 
+That is useful if you need to check more information about requests, send special headers, or if you need to perform other types of requests supported by Curly (POST and DELETE). The [documentation](https://docs.minicli.dev/en/latest/xtras/extending-minicli/#miniclicurly) has more info on how to use this library.
 
 ```php
 use function Minicli\PestCurlyPlugin\curly;
