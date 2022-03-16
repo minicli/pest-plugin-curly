@@ -3,9 +3,9 @@
 declare(strict_types=1);
 
 namespace Minicli\PestCurlyPlugin;
+
 use Minicli\Curly\Client;
 use PHPUnit\Framework\TestCase;
-use PHPUnit\Util\Test;
 
 /**
  * @internal
@@ -14,7 +14,7 @@ trait Curly
 {
     public function get(string $endpoint): TestCase
     {
-        $client = $this->getCurly();
+        $client   = $this->getCurly();
         $response = $client->get($endpoint);
 
         expect($response)->toBeArray()->toHaveKeys(['code', 'body']);
@@ -25,7 +25,7 @@ trait Curly
 
     public function matchResponse(string $endpoint, int $code): TestCase
     {
-        $client = $this->getCurly();
+        $client   = $this->getCurly();
         $response = $client->get($endpoint);
 
         expect($response)->toBeArray()->toHaveKeys(['code', 'body']);
@@ -36,7 +36,7 @@ trait Curly
 
     public function responseContains(string $endpoint, string $needle): TestCase
     {
-        $client = $this->getCurly();
+        $client   = $this->getCurly();
         $response = $client->get($endpoint);
 
         expect($response)->toBeArray()->toHaveKeys(['code', 'body']);
@@ -44,7 +44,6 @@ trait Curly
 
         return $this;
     }
-
 
     protected function getCurly(): Client
     {
