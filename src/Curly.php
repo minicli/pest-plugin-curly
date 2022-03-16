@@ -18,7 +18,7 @@ trait Curly
         $response = $client->get($endpoint);
 
         expect($response)->toBeArray()->toHaveKeys(['code', 'body']);
-        expect($response['code'])->toBeIn([200, 301, 302]);
+        expect($response['code'])->toBe(200);
 
         return $this;
     }
