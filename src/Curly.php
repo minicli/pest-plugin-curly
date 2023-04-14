@@ -14,29 +14,29 @@ trait Curly
 {
     public function get(string $endpoint): TestCase
     {
-        $client   = $this->getCurly();
+        $client = $this->getCurly();
         $response = $client->get($endpoint);
 
-        expect($response)->toBeArray()->toHaveKeys(['code', 'body']);
-        expect($response['code'])->toBe(200);
+        expect($response)->toBeArray()->toHaveKeys(['code', 'body'])
+            ->and($response['code'])->toBe(200);
 
         return $this;
     }
 
     public function matchResponse(string $endpoint, int $code): TestCase
     {
-        $client   = $this->getCurly();
+        $client = $this->getCurly();
         $response = $client->get($endpoint);
 
-        expect($response)->toBeArray()->toHaveKeys(['code', 'body']);
-        expect($response['code'])->toBe($code);
+        expect($response)->toBeArray()->toHaveKeys(['code', 'body'])
+            ->and($response['code'])->toBe($code);
 
         return $this;
     }
 
     public function responseContains(string $endpoint, string $needle): TestCase
     {
-        $client   = $this->getCurly();
+        $client = $this->getCurly();
         $response = $client->get($endpoint);
 
         expect($response)->toBeArray()->toHaveKeys(['code', 'body']);
